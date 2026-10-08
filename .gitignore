@@ -1,0 +1,55 @@
+# Learn more https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
+
+# dependencies
+node_modules/
+
+# Expo
+.expo/
+dist/
+web-build/
+expo-env.d.ts
+
+# Native
+.kotlin/
+*.orig.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+
+# Metro
+.metro-health-check*
+
+# debug
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+
+# macOS
+.DS_Store
+*.pem
+
+# local env files
+.env
+.env*.local
+.dev.vars
+.dev.vars.local
+
+# typescript
+*.tsbuildinfo
+
+app-example
+
+# google service files (real configs stay local, use .example templates)
+google-services.json
+android/app/google-services.json
+GoogleService-Info.plist
+*-firebase-adminsdk-*.json
+*-firebase-adminsdk-*.json.example.keep
+!*-firebase-adminsdk-*.example.json
+service-account*.json
+
+# local data exports (may contain user PII)
+exports/
+*.csv
