@@ -6,23 +6,6 @@ Companion Android app for the paper:
 Sally Ahmed, Jan Enkmann, Kye Shimizu, Ivy Yip, Vincent Beermann, Ayse Alomar, Falk Uebernickel, Pattie Maes.
 arXiv:2606.08965 [cs.HC] (8 Jun 2026) — https://arxiv.org/abs/2606.08965
 
-## What this repo is
-
-This app was the experience-sampling + passive-logging instrument for the paper's 7-day in-the-wild study (21 participants, 1,445 sessions). It pairs with a low-cost consumer smartwatch (Bangle.js 2) and collects:
-
-- **Passive smartphone logging** — hourly app-usage polls plus app start/stop events captured on-device via Android UsageStats and an accessibility service (native Kotlin modules, WorkManager scheduling, offline-first upload queue).
-- **Session-level surveys** — after phone-use sessions: regret ("I feel regret about this phone use session"), perceived time vs. intended ("compared with what you had intended…"), and meaningfulness, all on 7-point scales.
-- **End-of-day surveys** — how sessions started/ended, overall feeling, and energy level.
-- **Bedtime preference** — a first-launch bedtime prompt so end-of-day survey notifications arrive before sleep.
-
-All records are stored in Supabase (PostgreSQL). There is no product analytics in this build.
-
-## Paper findings this app supports
-
-1. **Intention–behavior gap beats duration.** The gap between intended and actual use predicts regret far more strongly than session duration; duration's apparent effect collapses once intention is modeled. The session survey's time-comparison item is the key label here.
-2. **Regret is about displaced alternatives.** Regret is amplified at night and following productivity-app use — patterns the hourly usage polls + event stream + bedtime-aware EOD scheduling are designed to capture.
-3. **Two-layer prediction.** Pre-session contextual features generalize across participants while physiology adds person-specific lift — pointing to just-in-time adaptive interventions rather than timer-based ones. Interviews surfaced scrolling-as-avoidance and time blindness as mechanisms.
-
 ## Repo structure
 
 - `app/` — Expo Router screens: home (permissions, collection status), session survey, end-of-day survey, debug page.
